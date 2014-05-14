@@ -82,7 +82,13 @@ old versions. Otherwise, if you just change your API, a lot of your clients woul
 Although, we won't be developing multiple versions (today we're working on V1), it is important
 that we plan for the future and properly namespace our documentation and work under V1 namespace.
 ## Releases
-
+**Note about testing:** *Tests, especially while building an API are NOT optional or nice to have.
+In general, an untested app is not worth living ;) Due to the  time constraints and complexity
+of this challenge we are making testing as a release. In the real world, we would either TDD or the least of it
+we would write tests as we write code in small increments. Please keep in mind that this doesn't
+make testing less important or a second class citizen, but we are choosing what to focus on in this
+challenge. Realease 4 is testing the app and even if you don't get to it in time, we would highly recommend
+that you do it on your own time. *
 ### Release 0: Documentation
 Designing an API starts with documentation. Without proper and detailed documentation
 an API would not be dependable. What should you include? Let's follow [Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.
@@ -129,3 +135,6 @@ key. If no API key is provided, we must send back Unauthorized status with a mes
   When users exceed their rate limit we send back a Too Many Requests status.
 
 - Implementation.
+
+### Release 4: Test the API
+write controller tests to support your API.
