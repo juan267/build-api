@@ -1,5 +1,10 @@
-BANDNAMES = [ "Joy Division", "New Order", "The Smiths", "The Sisters of Mercy", "Wye Oak", "Thao and the Get Down Stay Down",
-          "Siouxsie and the Banshees", "Interpol", "Ted Leo and The Pharmacists", "The Impossibles", "The Promise Ring",
-          "Fugazi" ]
-
-BANDNAMES.each{ |band_name| Band.create(name: band_name) }
+require_relative '../spec/factories'
+10.times {
+  user = FactoryGirl.create :user
+  rand(6).times {
+    post = FactoryGirl.create :post, :user => user
+    rand(10).times {
+      FactoryGirl.create :comment, :user => user, :post => post
+    }
+  }
+}
