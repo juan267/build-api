@@ -138,3 +138,8 @@ key. If no API key is provided, we must send back Unauthorized status with a mes
   - When users exceed their rate limit we send back a Too Many Requests status.
 
 - Implementation.
+
+### Release 4: Deployment
+Get your application up on Heroku so the outside world can see it! You'll be consuming this API in a challenge later in this week, so deployment is mandatory.
+
+Be sure to include the URL of your app in your README.md.
