@@ -127,17 +127,14 @@ security measures, we will keep it simple. This will be done through 2 parts:
   This api key will be saved to the database (you will need to create the table). We also need to include
   a column that keeps track of how many times this key was used.
 
-- Implement the endpoint
+- Implement the endpoint.
 
 
 #### 2- POST requests to require API key
 - Start at the documentation:
   - Modify all of the POST endpoints to require an API
 key. If no API key is provided, we must send back Unauthorized status with a message.
-  - Modify all of the POST endpoints to be a maximum 10 requests per key per day.
-  When users exceed their rate limit we send back a Too Many Requests status.
+  - Modify all of the POST endpoints to enforce a rate limit of your choosing.
+  - When users exceed their rate limit we send back a Too Many Requests status.
 
 - Implementation.
-
-### Release 4: Test the API
-write controller tests to support your API.
