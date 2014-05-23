@@ -96,7 +96,7 @@ In general, an untested app is not worth living ;) Today, we're going to try to 
 Designing an API starts with documentation. Without proper and detailed documentation
 an API would not be dependable. What should you include? Let's follow [Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.
 We will not implement or write a single piece of code until we get our documentation right, this is an
-essential part of this exercise and it's not trivial.
+essential part of this exercise and it's not trivial. Rename this file to `lesson.md` and replace it with your `README.md` file.
 
 ### Release 1: Implement GET requests
 _pending approval of documentation from an instructor_
