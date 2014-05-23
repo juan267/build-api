@@ -83,12 +83,15 @@ Although, we won't be developing multiple versions (today we're working on V1), 
 that we plan for the future and properly namespace our documentation and work under V1 namespace.
 ## Releases
 **Note about testing:** *Tests, especially while building an API are NOT optional or nice to have.
-In general, an untested app is not worth living ;) Due to the  time constraints and complexity
-of this challenge we are making testing as a release. In the real world, we would either TDD or the least of it
-we would write tests as we write code in small increments. Please keep in mind that this doesn't
-make testing less important or a second class citizen, but we are choosing what to focus on in this
-challenge. Realease 4 is testing the app and even if you don't get to it in time, we would highly recommend
-that you do it on your own time. *
+In general, an untested app is not worth living ;) Today, we're going to try to TDD our way through this app. We've already written the model tests for you in `spec/models/`, your job is to write controller tests for the app as you go in `spec/controllers/`. Your workflow for this project should look like this:
+
+    1. Decide which endpoint you want to write.
+    2. Add a section in the README describing the behavior of that endpoint.
+    3. Write the simplest failing test you can think of for that endpoint.
+    4. See the test fail.
+    5. Write code to make that test pass.
+    6. return to step 3. If there is nothing else you can test on that endpoint, return to step 1.
+
 ### Release 0: Documentation
 Designing an API starts with documentation. Without proper and detailed documentation
 an API would not be dependable. What should you include? Let's follow [Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.
