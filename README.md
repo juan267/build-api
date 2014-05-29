@@ -16,6 +16,7 @@ Twitter and Github did.
 ## Endpoints ([what's an API Endpoint?](http://bit.ly/1jIgbNw))
 - [GET] API key
 - [GET] list of users
+- [GET] list of posts
 - [GET] list of posts for a user
 - [GET] list of comments for a post by a user
 - [POST] create a new post by a user
