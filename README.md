@@ -16,11 +16,11 @@ Twitter and Github did.
 ## Endpoints ([what's an API Endpoint?](http://bit.ly/1jIgbNw))
 - [GET] API key
 - [GET] list of users
-- [GET] list of posts
-- [GET] list of posts for a user
-- [GET] list of comments for a post by a user
-- [POST] create a new post by a user
-- [POST] create a new comment for a post by a user
+- [GET] list of articles
+- [GET] list of articles for a user
+- [GET] list of comments for an article by a user
+- [POST] create a new article by a user
+- [POST] create a new comment for an article by a user
 
 ## Statuses
 It is important to always send back the appropriate status codes with your API response.
@@ -104,18 +104,18 @@ _pending approval of documentation from an instructor_
 
 Implement the following endpoints:
 - [GET] list of users
-- [GET] list of posts for a user
-- [GET] list of comments for a post by a user
+- [GET] list of articles for a user
+- [GET] list of comments for an article by a user
 
 ### Release 2: Implement POST requests
 _pending approval of documentation from an instructor_
 
 Implement the following endpoints:
-- [POST] create a new post by a user
-- [POST] create a new comment for a post by a user
+- [POST] create a new article by a user
+- [POST] create a new comment for an article by a user
 
 ### Release 3: Implement authorization and rate limit
-POST requests need to be authorized. We shouldn't be able to create a new post
+POST requests need to be authorized. We shouldn't be able to create a new article
 or comment without being authorized to do so. While this is a complex subject
 and API authorization are could be implemented in various ways to increase
 security measures, we will keep it simple. This will be done through 2 parts:
