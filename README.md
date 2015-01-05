@@ -8,7 +8,8 @@
 
 Design and document a simple web API against a hacker news clone. The models 
 already exist, it will be up to you to write Sinatra routes to manipulate data 
-(using the 4 CRUD HTTP verbs: GET, POST, PUT, DELETE).
+(using the CRUD HTTP verbs: `GET`, `POST`, `PUT`, and `DELETE`).
+
 This API is meant to be consumed by the public. Think about how Twitter or
 Github built their API against their app(s). You will be wearing your API 
 designer/architect hats and thinking about how you want to expose data and 
@@ -88,9 +89,10 @@ versions (today we're working on V1), it is important that we plan for the
 future and properly namespace our documentation and work under V1 namespace.
 
 ## Releases
-**Note about testing:** *Tests, especially while building an API are NOT 
-optional or nice to have. Today, we're going to try to TDD our way through this 
-app. We've already written the model tests for you in `spec/models/`, your job 
+**Note about testing:** 
+*Tests, especially while building an API are NOT optional or nice to have.* 
+Today, we're going to try to TDD our way through building your API. We've 
+already written the model tests for you in `spec/models/`, your job 
 is to write controller tests for the app as you go in `spec/controllers/`. Your 
 workflow for this project should look like this:
 
@@ -103,9 +105,11 @@ workflow for this project should look like this:
 
 ### Release 0: Documentation
 Designing an API starts with documentation. Without proper and detailed documentation
-an API would not be dependable. What should you include? Let's follow [Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.
-We will not implement or write a single piece of code until we get our documentation right, this is an
-essential part of this exercise and it's not trivial. Rename this file to `lesson.md` and replace it with your `README.md` file.
+an API would not be dependable. What should you include?  Let's follow 
+[Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.  We will not 
+implement or write a single piece of code until we get our documentation right, 
+this is an essential part of this exercise and it's not trivial. Rename this 
+file to `lesson.md` and replace it with your `README.md` file.
 
 *Try to keep REST conventions in mind.* Most developers use the conventions that 
 Ruby on Rails adheres to for their routes. You can find examples in the table
@@ -136,8 +140,9 @@ security measures, we will keep it simple. This will be done through 2 parts:
 
   [GET] API key: When the user hits this endpoint, we will create a [new and unique
   api key](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/securerandom/rdoc/SecureRandom.html#method-c-hex).
-  This api key will be saved to the database (you will need to create the table). We also need to include
-  a column that keeps track of how many times this key was used.
+  This api key will be saved to the database (you will need to create the table). 
+  We also need to include a column that keeps track of how many times this key 
+  was used.
 
 - Implement the endpoint.
 
