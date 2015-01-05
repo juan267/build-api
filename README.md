@@ -19,10 +19,9 @@ services to the public just like Twitter and Github developers did.
 - [GET] API key
 - [GET] list of users
 - [GET] list of articles
-- [GET] list of articles for a user
-- [GET] list of comments for an article by a user
+- [GET] list of comments for a user
 - [POST] create a new article by a user
-- [POST] create a new comment for an article by a user
+- [POST] create a new comment for an article (a comment is owned by a user)
 
 ## Statuses
 It is important to always send back the appropriate status codes with your API response.
@@ -118,14 +117,13 @@ _pending approval of documentation from an instructor_
 Implement the following endpoints:
 - [GET] list of users
 - [GET] list of articles for a user
-- [GET] list of comments for an article by a user
 
 ### Release 2: Implement POST requests
 _pending approval of documentation from an instructor_
 
 Implement the following endpoints:
 - [POST] create a new article by a user
-- [POST] create a new comment for an article by a user
+- [POST] create a new comment for an article (a comment is owned by a user)
 
 ### Release 3: Implement authorization and rate limit
 POST requests need to be authorized. We shouldn't be able to create a new article
@@ -133,7 +131,7 @@ or comment without being authorized to do so. While this is a complex subject
 and API authorization could be implemented in various ways to increase
 security measures, we will keep it simple. This will be done through 2 parts:
 
-#### 1- API key generation
+#### 1 - API key generation
 - Start at the documentation, add a new endpoint:
 
   [GET] API key: When the user hits this endpoint, we will create a [new and unique
@@ -144,12 +142,12 @@ security measures, we will keep it simple. This will be done through 2 parts:
 - Implement the endpoint.
 
 
-#### 2- POST requests to require API key
+#### 2 - POST requests require an API key
 - Start at the documentation:
   - Modify all of the POST endpoints to require an API key. If no API key is 
-    provided, we must send back Unauthorized status with a message.
+    provided, we must send back an Unauthorized status with a message.
   - Modify all of the POST endpoints to enforce a rate limit of your choosing.
-  - When users exceed their rate limit we send back a Too Many Requests status.
+  - When users exceed their rate limit, send back a Too Many Requests status.
 
 - Implementation.
 
