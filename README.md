@@ -6,13 +6,12 @@
 
 ## Summary
 
-Design and document a simple web API against a hacker news clone. The models 
-already exist, it will be up to you to write Sinatra routes to manipulate data 
+Design and document a simple web API against a hacker news clone.It will be up to you to write rails routes to manipulate data, and the models of the aplication
 (using the CRUD HTTP verbs: `GET`, `POST`, `PUT`, and `DELETE`).
 
 This API is meant to be consumed by the public. Think about how Twitter or
-Github built their API against their app(s). You will be wearing your API 
-designer/architect hats and thinking about how you want to expose data and 
+Github built their API against their app(s). You will be wearing your API
+designer/architect hats and thinking about how you want to expose data and
 services to the public just like Twitter and Github developers did.
 
 
@@ -82,54 +81,58 @@ HTTP status codes you can use. Here are some of the most commonly-used statuses:
 </table>
 
 ## Versioning
-APIs should be properly versioned. APIs evolve and change, and we must do this 
-while supporting old versions. Otherwise, if you just change your API, a lot of 
-your clients would be in trouble. Although we won't be developing multiple 
-versions (today we're working on V1), it is important that we plan for the 
+APIs should be properly versioned. APIs evolve and change, and we must do this
+while supporting old versions. Otherwise, if you just change your API, a lot of
+your clients would be in trouble. Although we won't be developing multiple
+versions (today we're working on V1), it is important that we plan for the
 future and properly namespace our documentation and work under V1 namespace.
 
 ## Releases
-**Note about testing:** 
-*Tests, especially while building an API are NOT optional or nice to have.* 
-Today, we're going to try to TDD our way through building your API. We've 
-already written the model tests for you in `spec/models/`, your job 
-is to write controller tests for the app as you go in `spec/controllers/`. Your 
-workflow for this project should look like this:
+**Note about testing:**
+Your workflow for this project should look like this:
 
     1. Decide which endpoint you want to write.
     2. Add a section in the README describing the behavior of that endpoint.
-    3. Write the simplest failing test you can think of for that endpoint.
-    4. See the test fail.
-    5. Write code to make that test pass.
-    6. Return to step 3. If there is nothing else you can test on that endpoint, return to step 1.
+    3. Test the endpoint and that it follows the desired behaviour.
 
 ### Release 0: Documentation
+    1. Create the article, user and comment model.
+      1.A user has username, email, name
+      2.A comment has a body,
+      3.An article has a title and a body
+    2. Create the asociations between models.
+      1.A user has many articles, and has many models.
+      2.An article belongs to a User, and has many comments.
+      2.A comment belongs to a User and  an Article.
+    3. Seed your database
+
+### Release 1: Documentation
 Designing an API starts with documentation. Without proper and detailed documentation
-an API would not be dependable. What should you include?  Let's follow 
-[Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.  We will not 
-implement or write a single piece of code until we get our documentation right, 
-this is an essential part of this exercise and it's not trivial. Rename this 
+an API would not be dependable. What should you include?  Let's follow
+[Twitter's REST API](https://dev.twitter.com/docs/api/1.1) model.  We will not
+implement or write a single piece of code until we get our documentation right,
+this is an essential part of this exercise and it's not trivial. Rename this
 file to `lesson.md` and replace it with your `README.md` file.
 
-*Try to keep REST conventions in mind.* Most developers use the conventions that 
+*Try to keep REST conventions in mind.* Most developers use the conventions that
 Ruby on Rails adheres to for their routes. You can find examples in the table
 [here](http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions)
 
-### Release 1: Implement GET requests
+### Release 2: Implement GET requests
 _pending approval of documentation from an instructor_
 
 Implement the following endpoints:
 - [GET] list of users
 - [GET] list of articles for a user
 
-### Release 2: Implement POST requests
+### Release 3: Implement POST requests
 _pending approval of documentation from an instructor_
 
 Implement the following endpoints:
 - [POST] create a new article by a user
 - [POST] create a new comment for an article (a comment is owned by a user)
 
-### Release 3: Implement authorization and rate limit
+### Release 4: Implement authorization and rate limit
 POST requests need to be authorized. We shouldn't be able to create a new article
 or comment without being authorized to do so. While this is a complex subject
 and API authorization could be implemented in various ways to increase
@@ -140,8 +143,8 @@ security measures, we will keep it simple. This will be done through 2 parts:
 
   [GET] API key: When the user hits this endpoint, we will create a [new and unique
   api key](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/securerandom/rdoc/SecureRandom.html#method-c-hex).
-  This api key will be saved to the database (you will need to create the table). 
-  We also need to include a column that keeps track of how many times this key 
+  This api key will be saved to the database (you will need to create the table).
+  We also need to include a column that keeps track of how many times this key
   was used.
 
 - Implement the endpoint.
@@ -149,19 +152,19 @@ security measures, we will keep it simple. This will be done through 2 parts:
 
 #### 2 - POST requests require an API key
 - Start at the documentation:
-  - Modify all of the POST endpoints to require an API key. If no API key is 
+  - Modify all of the POST endpoints to require an API key. If no API key is
     provided, we must send back an Unauthorized status with a message.
   - Modify all of the POST endpoints to enforce a rate limit of your choosing.
   - When users exceed their rate limit, send back a Too Many Requests status.
 
 - Implementation.
 
-### Release 4: Deployment
-Get your application up on Heroku so the outside world can see it! 
+### Release 5: Deployment
+Get your application up on Heroku so the outside world can see it!
 
 Be sure to include the URL of your app in your README.md.
 
 ### Release 5: Consume It!
-Write a simple application to consume your now-deployed API. You've already 
-written an app to consume an API, so it shouldn't take long to write a small 
+Write a simple application to consume your now-deployed API. You've already
+written an app to consume an API, so it shouldn't take long to write a small
 app to consume the API you just wrote.
