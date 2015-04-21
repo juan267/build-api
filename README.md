@@ -101,7 +101,7 @@ Your workflow for this project should look like this:
       3.An article has a title and a body
 
     2. Create the asociations between models.
-      1.A user has many articles, and has many models.
+      1.A user has many articles, and has many comments.
       2.An article belongs to a User, and has many comments.
       2.A comment belongs to a User and  an Article.
 
