@@ -88,22 +88,23 @@ versions (today we're working on V1), it is important that we plan for the
 future and properly namespace our documentation and work under V1 namespace.
 
 ## Releases
-**Note about testing:**
 Your workflow for this project should look like this:
 
     1. Decide which endpoint you want to write.
     2. Add a section in the README describing the behavior of that endpoint.
     3. Test the endpoint and that it follows the desired behaviour.
 
-### Release 0: Documentation
+### Release 0: Create the skeleton of the app
     1. Create the article, user and comment model.
       1.A user has username, email, name
       2.A comment has a body,
       3.An article has a title and a body
+
     2. Create the asociations between models.
       1.A user has many articles, and has many models.
       2.An article belongs to a User, and has many comments.
       2.A comment belongs to a User and  an Article.
+
     3. Seed your database
 
 ### Release 1: Documentation
