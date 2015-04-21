@@ -165,7 +165,7 @@ Get your application up on Heroku so the outside world can see it!
 
 Be sure to include the URL of your app in your README.md.
 
-### Release 5: Consume It!
+### Release 6: Consume It!
 Write a simple application to consume your now-deployed API. You've already
 written an app to consume an API, so it shouldn't take long to write a small
 app to consume the API you just wrote.
